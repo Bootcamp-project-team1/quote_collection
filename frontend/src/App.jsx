@@ -7,14 +7,14 @@ import TempPage from "./pages/TempPage";
  */
 const RootLayout = () => {
   return (
-    <>
+    <div className="relative flex min-h-[80vh] min-w-[70vw] shadow-2xl rounded-sm bg-[#E5E8E1]">
       <header>
-        <NavBar />
+        <NavBar className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col z-20 rotate-270 origin-left" />
       </header>
-      <main>
+      <main className="p-8 md:p-12 text-center text-black relative z-20 ">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 };
 
