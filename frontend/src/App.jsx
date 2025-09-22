@@ -18,6 +18,9 @@ const RootLayout = () => {
   );
 };
 
+/**
+ * 이곳에 Route 설정
+ */
 const router = createBrowserRouter([
   {
     path: "/", // 메인 페이지
