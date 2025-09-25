@@ -12,9 +12,9 @@ from app.routers import auth_mock
 
 # FastAPI 앱 생성
 app = FastAPI(
-    title="API 확인용 mock 버전", 
+    title="API 확인용 mock 버전",
     version="1.0.0",
-    description="데이터베이스 없이 API 구조 테스트용"
+    description="데이터베이스 없이 API 구조 테스트용",
 )
 
 # CORS 설정 (프론트엔드와 통신용)
@@ -29,19 +29,18 @@ app.add_middleware(
 # 라우터 등록
 app.include_router(auth_mock.router)
 
+
 @app.get("/")
 def root():
     return {
         "note": "이 버전은 메모리에 데이터를 저장 서버를 재시작하면 데이터가 사라짐."
     }
 
+
 @app.get("/health")
 def health_check():
-    return {
-        "status": "healthy", 
-        "mode": "mock",
-        "database": "in-memory"
-    }
+    return {"status": "healthy", "mode": "mock", "database": "in-memory"}
+
 
 if __name__ == "__main__":
     uvicorn.run("main_mock:app", host="localhost", port=8081, reload=True)

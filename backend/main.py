@@ -19,9 +19,11 @@ app.add_middleware(
 # 라우터 등록
 app.include_router(auth.router)
 
+
 @app.get("/")
 def root():
     return {"API": "Quote Collection"}
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="localhost", port=8081, reload=True)
