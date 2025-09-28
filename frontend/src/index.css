@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+  --color-main-green: #39452d;
+  --color-first-menu-dim: #d6b8ad;
+  --color-first-menu-thick: #c29a8d;
+  --color-second-menu-dim: #afd9d5;
+  --color-second-menu-thick: #9ac7c1;
+  --color-third-menu-dim: #d1dcbc;
+  --color-third-menu-thick: #aec18e;
+  --color-main-white: #fdfdfb;
+}
