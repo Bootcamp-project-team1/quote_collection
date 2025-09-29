@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from app.routers import auth
 
-# FastAPI 앱 생성
+from .database import init_db
+from .routers import auth
+
 app = FastAPI(title="Quote Collection API", version="1.0.0")
 
-# CORS 설정 (프론트엔드와 통신용)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
@@ -15,15 +15,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-# 라우터 등록
+init_db()
 app.include_router(auth.router)
-
 
 @app.get("/")
 def root():
     return {"API": "Quote Collection"}
 
-
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="localhost", port=8081, reload=True)
+    uvicorn.run("app.main:app", host="localhost", port=8081, reload=True)
