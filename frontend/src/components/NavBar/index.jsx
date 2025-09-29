@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { to: "/", label: "메인", color: "first", darkColor: "first" },
-  { to: "/temp", label: "임시 1", color: "second", darkColor: "second" },
-  { to: "/temp2", label: "임시 2", color: "third", darkColor: "third" },
+  { to: "/", label: "book", color: "first", darkColor: "first" },
+  { to: "/movie", label: "movie", color: "second", darkColor: "second" },
+  { to: "/drama", label: "drama", color: "third", darkColor: "third" },
 ];
 
 const colorVariants = {
@@ -17,6 +17,7 @@ const colorVariants = {
 
 const NavBar = () => {
   return (
+    <>
     <nav className="absolute -left-10 top-24">
       <ul className="space-y-4">
         {navItems.map((item, index) => (
@@ -48,6 +49,7 @@ const NavBar = () => {
         ))}
       </ul>
     </nav>
+    </>
   );
 };
 
