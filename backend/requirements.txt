@@ -26,3 +26,5 @@ typing-extensions==4.15.0
 typing-inspection==0.4.1
 uvicorn==0.35.0
 PyJWT==2.8.0 #추가 (jose==1.0.0은 JWT 기능이 없음)
+aiomysql==0.2.0 # asyncmy가 자꾸 깨져서 예비용
+alembic==1.14.0

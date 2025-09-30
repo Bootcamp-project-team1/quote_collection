@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from app.routers import auth
+from app.routers import auth, tag
 
 # FastAPI 앱 생성
 app = FastAPI(title="Quote Collection API", version="1.0.0")
@@ -18,6 +18,8 @@ app.add_middleware(
 
 # 라우터 등록
 app.include_router(auth.router)
+app.include_router(tag.router)
+
 
 
 @app.get("/")
