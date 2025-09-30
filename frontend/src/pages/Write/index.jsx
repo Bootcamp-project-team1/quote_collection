@@ -1,4 +1,4 @@
-export const Upload = () =>{
+export const Write = () =>{
     return(
         <>
         </>
