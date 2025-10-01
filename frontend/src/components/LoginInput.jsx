@@ -3,9 +3,9 @@ export const LoginInput = ({title, type}) => {
   return (
     <>
       <div>
-        <div>{title}</div>
+        <div className="text-white">{title}</div>
         <div>
-          <input type={type} />
+          <input type={type} className="bg-white"/>
         </div>
       </div>
     </>

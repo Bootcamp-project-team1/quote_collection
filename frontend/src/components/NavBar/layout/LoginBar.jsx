@@ -22,13 +22,13 @@ export const LoginBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
             <NavLink className="mr-3" to="/Mypage">
               mypage
             </NavLink>
-            <span className="mr-3" onClick={handleLogout}>
+            <span className="mr-3 cursor-pointer" onClick={handleLogout}>
               logout
             </span>
           </>
         ) : (
           <>
-            <span className="mr-3" onClick={() => setIsOpen(true)}>
+            <span className="mr-3 cursor-pointer" onClick={() => setIsOpen(true)}>
               login
             </span>
           </>
