@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import { Logo } from "./components/NavBar/layout/logo";
 import { MainPage } from "./pages/MainPage";
@@ -7,30 +7,37 @@ import { Bookmark } from "./pages/Bookmark";
 import { Write } from "./pages/Write";
 import { Mypage } from "./pages/Mypage";
 import LoginModal from "./components/Modal/LoginModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Signup } from "./pages/Signup";
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLogIn, setIsLogin] = useState(false);
+  const location = useLocation();
+
+  useEffect(()=>{
+    setIsOpen(false);
+  },[location])
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-nowrap">
       <div className="min-h-screen relative justify-center justify-items-center bg-main-green">
         <div className="relative">
           <NavBar />
-          <div className="relative z-10 w-[60vw] min-h-[90vh] mt-11 bg-main-white shadow-2xl rounded-lg">
-            <div className=" absolute flex  justify-center items-center">
-              {isOpen && (
+          <div className="relative z-50 w-[60vw] min-h-[90vh] mt-11 bg-main-white shadow-2xl rounded-lg">
+            {isOpen && (
+              <div className=" fixed inset-0 flex justify-center items-center">
                 <LoginModal setIsOpen={setIsOpen} setIsLogin={setIsLogin} />
-              )}
-            </div>
+              </div>
+            )}
+
             <LoginBar
               setIsLogin={setIsLogin}
               isLogIn={isLogIn}
               setIsOpen={setIsOpen}
             />
             <main className="p-8 md:p-12 text-center text-black">
-              <Logo/>
+              <Logo />
               <Outlet />
             </main>
           </div>
@@ -45,15 +52,16 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <MainPage mode={'book'}/> },
+      { index: true, element: <MainPage mode={"book"} /> },
       {
         element: <Outlet />,
         children: [
-          { path: "/movie", element: <MainPage mode={'movie'}  /> },
-          { path: "/drama", element: <MainPage mode={'drama'} /> },
+          { path: "/movie", element: <MainPage mode={"movie"} /> },
+          { path: "/drama", element: <MainPage mode={"drama"} /> },
           { path: "/bookmark", element: <Bookmark /> },
           { path: "/write", element: <Write /> },
           { path: "/mypage", element: <Mypage /> },
+          { path: "/signup", element: <Signup /> }
         ],
       },
     ],
