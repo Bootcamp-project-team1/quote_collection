@@ -3,6 +3,7 @@ import { LoginInput } from "../../LoginInput";
 
 const LoginModal = ({ setIsLogin, setIsOpen }) => {
   const navigation = useNavigate();
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("로그인 완료");
