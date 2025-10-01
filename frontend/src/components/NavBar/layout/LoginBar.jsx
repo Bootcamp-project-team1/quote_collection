@@ -1,25 +1,44 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import LoginModal from "../../Modal/LoginModal";
 
 export const LoginBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
+
+  const navigation = useNavigate();
+
   const handleLogout = (e) => {
     e.preventDefault();
     alert("로그아웃 되었습니다");
     setIsLogin(false);
   };
 
+  const onBookmark =()=>{
+    if (!isLogIn){
+      alert('로그인이 필요한 기능입니다.')
+    }else{
+      navigation('/bookmark');
+    }
+  }
+
+  const onWrite =()=>{
+    if (!isLogIn){
+      alert('로그인이 필요한 기능입니다.')
+    }else{
+      navigation('/write');
+    }
+  }
+
   return (
     <>
-      <nav className="float-right mr-3 mt-3 text-sm z-20">
-        <NavLink className="mr-3" to="/BookMark">
-          Bookmark
-        </NavLink>
-        <NavLink className="mr-3" to="/Write">
+      <nav className="float-right relative flex flex-row justify-items-end mr-3 mt-3 text-sm z-20">
+        <div className="mr-3" onClick={onBookmark}>
+          bookmark
+        </div>
+         <div className="mr-3" onClick={onWrite}>
           write
-        </NavLink>
+        </div>
         {isLogIn ? (
           <>
-            <NavLink className="mr-3" to="/Mypage">
+            <NavLink className="mr-3" to="/mypage">
               mypage
             </NavLink>
             <span className="mr-3" onClick={handleLogout}>
