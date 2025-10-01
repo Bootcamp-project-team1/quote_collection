@@ -8,7 +8,6 @@ import { Write } from "./pages/Write";
 import { Mypage } from "./pages/Mypage";
 import LoginModal from "./components/Modal/LoginModal";
 import { useState } from "react";
-import { Popular } from "./pages/MainPage/layout/Popular";
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +54,6 @@ const router = createBrowserRouter([
           { path: "/bookmark", element: <Bookmark /> },
           { path: "/write", element: <Write /> },
           { path: "/mypage", element: <Mypage /> },
-          { path: "/popular", element: <Popular/>},
         ],
       },
     ],
