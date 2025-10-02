@@ -2,9 +2,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from app.routers import auth, tag
+from app.database import Base, engine
+from app.models import user, book, like, producer, publisher, quote_tag, quote, source, tag as tag_model
+
+def create_tables():
+    Base.metadata.create_all(bind=engine)
 
 # FastAPI 앱 생성
 app = FastAPI(title="Quote Collection API", version="1.0.0")
+
+@app.on_event("startup")
+def on_startup():
+    create_tables()
 
 # CORS 설정 (프론트엔드와 통신용)
 app.add_middleware(
