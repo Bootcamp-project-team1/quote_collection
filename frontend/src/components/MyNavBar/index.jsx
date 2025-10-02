@@ -1,7 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import LoginModal from "../../Modal/LoginModal";
 
-export const LoginBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
+export const MyNavBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
   const navigation = useNavigate();
 
   const handleLogout = (e) => {

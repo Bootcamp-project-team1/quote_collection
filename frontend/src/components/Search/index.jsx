@@ -1,4 +1,4 @@
-export const SearchBar = () => {
+export const Search = () => {
   return (
     <div className="bg-main-beige p-8 pt-14 w-4/5 mt-14 rounded-xl shadow-xl flex flex-nowrap">
       <input

@@ -1,14 +1,14 @@
-import { SearchBar } from "../../components/NavBar/layout/SearchBar";
+import { Search } from "../../components/Search";
 
 export const MainPage = ({ mode }) => {
   return (
     <>
       <div className="flex justify-center">
-        <SearchBar />
+        <Search/>
       </div>
       <div className="mt-12 flex flex-col items-center">
         {mode}
-
+        
         {/* popular */}
         <div className="flex-col justify-items-center items-center">
           <div className="mt-9 mb-4 text-3xl">POPULAR</div>
