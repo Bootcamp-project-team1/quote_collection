@@ -3,22 +3,36 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from app.routers import auth, tag
 from app.database import Base, engine
-from app.models import user, book, like, producer, publisher, quote_tag, quote, source, tag as tag_model
+from app.models import (
+    user,
+    book,
+    like,
+    producer,
+    publisher,
+    quote_tag,
+    quote,
+    source,
+    tag as tag_model,
+)
+
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
 
+
 # FastAPI 앱 생성
 app = FastAPI(title="Quote Collection API", version="1.0.0")
+
 
 @app.on_event("startup")
 def on_startup():
     create_tables()
 
+
 # CORS 설정 (프론트엔드와 통신용)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:5173", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,8 +42,8 @@ app.add_middleware(
 # 라우터 등록
 app.include_router(auth.router)
 app.include_router(tag.router)
-app.include_router(book.router)
-app.include_router(publisher.router)
+# app.include_router(book.router)
+# app.include_router(publisher.router)
 
 
 @app.get("/")
