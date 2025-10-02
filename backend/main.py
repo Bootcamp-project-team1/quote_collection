@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from app.routers import auth, tag
+from app.routers import auth, tag, book, publisher
 from app.database import Base, engine
 from app.models import user, book, like, producer, publisher, quote_tag, quote, source, tag as tag_model
 
