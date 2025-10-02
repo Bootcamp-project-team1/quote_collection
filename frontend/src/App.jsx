@@ -1,6 +1,11 @@
-import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  useLocation,
+} from "react-router-dom";
 import NavBar from "./components/NavBar";
-import { Logo } from "./components/NavBar/layout/logo";
+import { Logo } from "./components/NavBar/layout/Logo";
 import { MainPage } from "./pages/MainPage";
 import { LoginBar } from "./components/NavBar/layout/LoginBar";
 import { Bookmark } from "./pages/Bookmark";
@@ -15,16 +20,16 @@ const RootLayout = () => {
   const [isLogIn, setIsLogin] = useState(false);
   const location = useLocation();
 
-  useEffect(()=>{
+  useEffect(() => {
     setIsOpen(false);
-  },[location])
+  }, [location]);
 
   return (
     <div className="relative flex flex-nowrap">
       <div className="min-h-screen relative justify-center justify-items-center bg-main-green">
         <div className="relative">
           <NavBar />
-          <div className="relative z-50 w-[60vw] min-h-[90vh] mt-11 bg-main-white shadow-2xl rounded-lg">
+          <div className="relative z-10 w-[60vw] min-h-[90vh] mt-11 bg-main-white shadow-2xl rounded-lg">
             {isOpen && (
               <div className=" fixed inset-0 flex justify-center items-center">
                 <LoginModal setIsOpen={setIsOpen} setIsLogin={setIsLogin} />
@@ -61,7 +66,7 @@ const router = createBrowserRouter([
           { path: "/bookmark", element: <Bookmark /> },
           { path: "/write", element: <Write /> },
           { path: "/mypage", element: <Mypage /> },
-          { path: "/signup", element: <Signup /> }
+          { path: "/signup", element: <Signup /> },
         ],
       },
     ],
