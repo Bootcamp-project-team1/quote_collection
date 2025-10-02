@@ -5,15 +5,15 @@ import {
   useLocation,
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import { Logo } from "./components/NavBar/layout/Logo";
 import { MainPage } from "./pages/MainPage";
-import { LoginBar } from "./components/NavBar/layout/LoginBar";
 import { Bookmark } from "./pages/Bookmark";
 import { Write } from "./pages/Write";
 import { Mypage } from "./pages/Mypage";
 import LoginModal from "./components/Modal/LoginModal";
 import { useEffect, useState } from "react";
 import { Signup } from "./pages/Signup";
+import { MyNavBar } from "./components/MyNavBar";
+import { Logo } from './components/Logo/index';
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,13 +36,13 @@ const RootLayout = () => {
               </div>
             )}
 
-            <LoginBar
+            <MyNavBar
               setIsLogin={setIsLogin}
               isLogIn={isLogIn}
               setIsOpen={setIsOpen}
             />
             <main className="p-8 md:p-12 text-center text-black">
-              <Logo />
+              <Logo/>
               <Outlet />
             </main>
           </div>
