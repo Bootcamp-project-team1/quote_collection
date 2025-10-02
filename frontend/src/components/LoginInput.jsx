@@ -1,11 +1,11 @@
 
-export const LoginInput = ({title, type}) => {
+export const LoginInput = ({ title, type, name }) => {
   return (
     <>
       <div>
         <div>{title}</div>
         <div>
-          <input type={type} />
+          <input type={type} name={name} />
         </div>
       </div>
     </>

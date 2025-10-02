@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import { Logo } from "./components/NavBar/layout/logo";
+import { Logo } from "./components/NavBar/layout/Logo";
 import { MainPage } from "./pages/MainPage";
 import { LoginBar } from "./components/NavBar/layout/LoginBar";
 import { SearchBar } from "./components/NavBar/layout/SearchBar";
@@ -14,7 +14,7 @@ import { useState } from "react";
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
-   const [isLogIn, setIsLogin] = useState(false);
+  const [isLogIn, setIsLogin] = useState(false);
 
   return (
     <div className="relative">
@@ -24,9 +24,15 @@ const RootLayout = () => {
 
           <div className="relative z-10 w-[60vw] min-h-[90vh] mt-11 bg-main-white shadow-2xl rounded-lg">
             <div className=" absolute flex  justify-center items-center">
-              {isOpen && <LoginModal setIsOpen={setIsOpen} setIsLogin={setIsLogin}/>}
+              {isOpen && (
+                <LoginModal setIsOpen={setIsOpen} setIsLogin={setIsLogin} />
+              )}
             </div>
-            <LoginBar setIsLogin={setIsLogin} isLogIn={isLogIn} setIsOpen={setIsOpen} />
+            <LoginBar
+              setIsLogin={setIsLogin}
+              isLogIn={isLogIn}
+              setIsOpen={setIsOpen}
+            />
             <main className="p-8 md:p-12 text-center text-black">
               <Logo />
               <div className="flex justify-center">
