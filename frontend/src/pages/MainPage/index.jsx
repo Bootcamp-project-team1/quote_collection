@@ -6,11 +6,11 @@ export const MainPage = ({ mode }) => {
       <div className="flex justify-center">
         <Search/>
       </div>
-      <div className="mt-12 flex flex-col items-center">
+      <div className="mt-12">
         {mode}
         
         {/* popular */}
-        <div className="flex-col justify-items-center items-center">
+        <div className="flex-col flex items-center">
           <div className="mt-9 mb-4 text-3xl">POPULAR</div>
           <div className="h-56 bg-popular-bg rounded-xl shadow-2xl w-4/5 ">
             <div className=" h-1/6 flex justify-start p-3">title</div>
@@ -22,8 +22,8 @@ export const MainPage = ({ mode }) => {
         </div>
 
         {/* new */}
-        <div className="flex-col justify-items-center items-center">
-          <div className="mt-9 mb-4 text-3xl">NEW</div>
+        <div className="flex-col flex items-center">
+          <div className="mt-20 mb-4 text-3xl">NEW</div>
           <div className="w-11/12 bg-new-bg h-full pt-5 pb-5 text-center rounded-lg shadow-lg">
             <div>new contentnew contentnew contentnew contentnew content</div>
           </div>
@@ -36,8 +36,8 @@ export const MainPage = ({ mode }) => {
         </div>
 
         {/* recommend */}
-        <div className="flex-col justify-items-center items-center">
-          <div className="mt-9 mb-4 text-3xl">RECOMMEND</div>
+        <div className="flex-col flex items-center mb-16">
+          <div className="mt-14 mb-4 text-3xl">RECOMMEND</div>
           <div className="w-11/12 bg-new-bg h-full pt-5 pb-5 text-center rounded-lg shadow-lg">
             <div>new contentnew contentnew contentnew contentnew content</div>
           </div>
