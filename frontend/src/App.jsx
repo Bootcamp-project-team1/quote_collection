@@ -29,7 +29,7 @@ const RootLayout = () => {
       <div className="min-h-screen relative justify-center justify-items-center bg-main-green">
         <div className="relative">
           <NavBar />
-          <div className="relative z-10 w-[60vw] min-h-[90vh] mt-11 bg-main-white shadow-2xl rounded-lg">
+          <div className="relative z-10 w-[60vw] min-h-[90vh] mt-11 bg-main-beige2 shadow-2xl rounded-lg">
             {isOpen && (
               <div className=" fixed inset-0 flex justify-center items-center">
                 <LoginModal setIsOpen={setIsOpen} setIsLogin={setIsLogin} />

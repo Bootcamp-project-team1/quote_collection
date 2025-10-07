@@ -1,6 +1,6 @@
 export const Search = () => {
   return (
-    <div className="bg-main-beige p-8 pt-14 w-4/5 mt-14 rounded-xl shadow-xl flex justify-center flex-nowrap">
+    <div className="bg-main-beige p-8 pt-14 w-4/5 mt-14 rounded-xl shadow-xl flex justify-center flex-nowrap border border-main-green">
       <input
         type="text"
         placeholder="검색어를 입력하세요"

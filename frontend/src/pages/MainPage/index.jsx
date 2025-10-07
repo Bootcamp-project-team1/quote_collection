@@ -12,7 +12,7 @@ export const MainPage = ({ mode }) => {
         {/* popular */}
         <div className="flex-col flex items-center">
           <div className="mt-9 mb-4 text-3xl">POPULAR</div>
-          <div className="h-56 bg-popular-bg rounded-xl shadow-2xl w-4/5 ">
+          <div className="h-56 bg-main-white opacity-70 rounded-xl shadow-xl w-4/5 ">
             <div className=" h-1/6 flex justify-start p-3">title</div>
             <div className="h-4/6 flex justify-center p-3">
               content contentcontentcontentcontentcontent
