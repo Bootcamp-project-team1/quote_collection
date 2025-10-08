@@ -36,6 +36,22 @@ export const BookWrite = () =>{
         })
     }
 
+    const onsubmit=()=>{
+        if(!title.trim()||!author.trim()||!content.trim()){
+            alert('필수항목을 입력해주세요');
+            return;
+        }
+
+        const newBook = {
+            'title':title,
+            'author':author,
+            'publisher':publisher,
+            'content':content,
+            'tags':selectedTags
+        }
+        return newBook;
+    }
+
     return(
         <>
         <Form className="flex flex-col mt-10">
@@ -53,7 +69,7 @@ export const BookWrite = () =>{
                 <input type="text"className="w-4/6 outline-1 rounded-lg p-2 pl-4 shadow-lg ml-3 shadow-gray-400 outline-main-green" placeholder="출판사를 입력하세요" value={publisher} onChange={e=>setPublisher(e.target.value)} />
             </div>
             <div className="flex items-end mt-3">
-                <label className="w-1/5 text-end pb-24">기록 하고싶은 문장 <span className="text-red-700">*</span>
+                <label className="w-1/5 text-end pb-20">기록 하고싶은 문장 <span className="text-red-700">*</span>
                 <div className="text-xs mr-4 text-gray-700">{charNum}/1000</div></label>
                 <textarea maxLength="1000" className="w-4/6 h-32 outline-1 pb-20 pl-4 rounded-lg p-2 shadow-lg ml-3 shadow-gray-400 outline-main-green" placeholder="기록 하고싶은 문장을 입력하세요" value={content} onChange={e=>{setContent(e.target.value); setCharNum(e.target.value.length);}} />
             </div>
@@ -69,7 +85,8 @@ export const BookWrite = () =>{
             </div>
              {error&&(<div className="text-xs w-4/6 mt-4 pl-3 flex justify-center text-red-700">{error}</div>)}
              <div className="self-end">
-                    <button className="rounded-xl p-2 text-xs mr-20 mt-7 w-5/12 border border-main-green hover:bg-main-pink">등록</button>
+                    <button className="rounded-xl p-2 text-xs mr-20 mt-7 w-5/12 border border-main-green hover:bg-main-pink"
+                    onClick={onsubmit}>등록</button>
              </div>
         </Form>
         </>
