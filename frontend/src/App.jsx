@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { Signup } from "./pages/Signup";
 import { MyNavBar } from "./components/MyNavBar";
 import { Logo } from './components/Logo/index';
+import { Detail } from "./pages/Detail";
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,6 +68,7 @@ const router = createBrowserRouter([
           { path: "/write", element: <Write /> },
           { path: "/mypage", element: <Mypage /> },
           { path: "/signup", element: <Signup /> },
+          { path: "/detail", element: <Detail /> },
         ],
       },
     ],

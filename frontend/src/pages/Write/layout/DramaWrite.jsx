@@ -8,7 +8,7 @@ export const DramaWrite = () =>{
     const[release, setRelease]=useState('');
     const[content, setContent] = useState('');
 
-    const tags = ['로맨스','공포','액션','스릴러','공상/SF','코미디','철학','드라마','다큐멘터리','예능','논픽션','애니메이션','뮤지컬','히어로','누아르','사회'];
+    const tags = ['로맨스','공포','액션','스릴러','공상/SF','코미디','철학','드라마','다큐멘터리','예능','시리즈','논픽션','애니메이션','뮤지컬','히어로','누아르','사회','국내','해외'];
     const [selectedTags,setSelectedTags]=useState([]);
     const [error, setError]=useState('');
     const [charNum,setCharNum]=useState(0);
