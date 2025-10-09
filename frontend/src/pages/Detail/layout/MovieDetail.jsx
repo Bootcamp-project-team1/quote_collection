@@ -15,7 +15,7 @@ export const MovieDetail =({quote})=>{
                   <div className="text-3xl mb-5">MOVIE MARKY</div>
                     <div className="flex items-end mt-3">
                         <label className="w-1/12 text-sm text-end pb-3">영화 제목 </label>
-                        <div className="w-4/6 text-xl text-start rounded-lg p-2 pl-4 ml-3">{quote.title}</div>
+                        <div className="w-4/6 text-xl text-start rounded-lg p-2 pl-4 ml-3 cursor-pointer" onClick={()=>onSearchList(quote.title)}>{quote.title}</div>
                      </div>
                      <div className="flex justify-center mt-3">  
                         <div className="w-4/5 text-main-white pt-12 pb-12 bg-main-green rounded-lg p-2 pl-4 ml-3 shadow-lg shadow-gray-400">{quote.content}</div>
@@ -27,7 +27,7 @@ export const MovieDetail =({quote})=>{
                      </div>
                      <div className="flex items-end mt-3">
                         <label className="w-1/12 text-sm text-end pb-3">감독 </label>
-                        <div className="w-4/6 text-start rounded-lg p-2 pl-4 ml-3 text-sm pb-3">{quote.creater}</div>
+                        <div className="w-4/6 text-start rounded-lg p-2 pl-4 ml-3 text-sm pb-3 cursor-pointer" onClick={()=>onSearchList(quote.creater)}>{quote.creater}</div>
                     </div>
         
                     {quote.subData && (<>
