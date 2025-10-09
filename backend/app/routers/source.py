@@ -7,8 +7,8 @@ from app.models.source import Source
 router = APIRouter(prefix="/source", tags=["Source"])
 
 @router.post("/")
-def create_source(source_type: str, pd_id: int, data: dict, db: Session = Depends(get_db)):
-    source = Source(source_type=source_type, pd_id=pd_id, data=data)
+def create_source(source_type: str, pd_id: int, data: dict, title: str, creator: str, db: Session = Depends(get_db)):
+    source = Source(source_type=source_type, pd_id=pd_id, data=data, title=title, creator=creator)
     db.add(source)
     db.commit()
     db.refresh(source)

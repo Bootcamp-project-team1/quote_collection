@@ -5,7 +5,7 @@ from typing import Optional
 # 공통
 class QuoteBase(BaseModel):
     content: str
-    page: int
+    page: str
     book_id: Optional[int] = None
     user_id: int
 

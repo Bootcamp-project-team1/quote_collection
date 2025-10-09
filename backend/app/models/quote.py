@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, TEXT
 from sqlalchemy import func
-from app.database import Base
-from .quote_tag import quote_tags  
+from app.database import Base  
 from sqlalchemy.orm import relationship
 
 
@@ -16,4 +15,4 @@ class Quote(Base):
     likes_count = Column(Integer, nullable=False, server_default = "0")
     created_at = Column(DateTime, server_default=func.now())
 
-    tags = relationship("Tag", secondary=quote_tags, backref="quotes")
+    tags = relationship("Tag", secondary="quote_tags", back_populates="quotes")
