@@ -23,7 +23,7 @@ export const BookDetail =({quote})=>{
                     {/* 로그인 정보를 어떻게 가져올지 구상 필요 */}
                     <div className="flex justify-end mt-3">  
                         <div className="flex border-2 border-sub-darkgreen rounded-lg p-3 mr-14">
-                            <img className="size-5" src={mark}/>
+                            <img className="size-5 cursor-pointer" src={mark}/>
                         </div>
                      </div>
                      <div className="flex items-end mt-3">

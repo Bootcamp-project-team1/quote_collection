@@ -22,7 +22,7 @@ export const DramaDetail =({quote})=>{
                      </div>
                     <div className="flex justify-end mt-3">  
                         <div className=" flex border-2 border-sub-darkgreen w-1/12 items-end rounded-lg p-3 mr-14">
-                            <img src={mark}/>
+                            <img className="size-5 cursor-pointer" src={mark}/>
                         </div>
                      </div>
                      <div className="flex items-end mt-3">
