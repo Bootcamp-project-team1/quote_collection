@@ -20,7 +20,7 @@ export const DramaWrite = () =>{
     useEffect(()=>{
         if(selectedTags.length <3)
             setError('')
-    },[selectedTags])
+    },[selectedTags]);
 
     const onSelected=(id)=>{
         setSelectedTags((prevSelected)=>{
@@ -46,6 +46,7 @@ export const DramaWrite = () =>{
 
         const newDrama = {
             'id':Date.now(),
+            'category':2,
             'title':title,
             'creater':producer,
             'subdata':release,

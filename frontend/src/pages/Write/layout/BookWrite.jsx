@@ -20,7 +20,7 @@ export const BookWrite = () =>{
     useEffect(()=>{
         if(selectedTags.length <5)
             setError('')
-    },[selectedTags])
+    },[selectedTags]);
 
     const onSelected=(id)=>{
         setSelectedTags((prevSelected)=>{
@@ -46,6 +46,7 @@ export const BookWrite = () =>{
 
         const newBook = {
             'id':Date.now(),
+            'category':0,
             'title':title,
             'creater':author,
             'subdata':publisher,

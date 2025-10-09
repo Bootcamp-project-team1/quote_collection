@@ -5,7 +5,7 @@ export const Popular =({popularQuote})=>{
     const navigation = useNavigate();
     
     const onDetail=()=>{
-        
+        navigation('/detail',{state:{key:popularQuote.id}})
     }
 
     return(

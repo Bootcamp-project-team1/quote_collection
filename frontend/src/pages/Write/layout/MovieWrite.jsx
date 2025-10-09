@@ -20,7 +20,7 @@ export const MovieWrite = () =>{
     useEffect(()=>{
         if(selectedTags.length <3)
             setError('')
-    },[selectedTags])
+    },[selectedTags]);
 
     const onSelected=(id)=>{
         setSelectedTags((prevSelected)=>{
@@ -46,6 +46,7 @@ export const MovieWrite = () =>{
 
         const newMovie = {
             'id':Date.now(),
+            'category':1,
             'title':title,
             'creater':director,
             'subdata':release,
