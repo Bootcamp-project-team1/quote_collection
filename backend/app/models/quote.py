@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime,TEXT
+from sqlalchemy import Column, Integer, String, DateTime, TEXT
 from sqlalchemy import func
 from app.database import Base
 from .quote_tag import quote_tags  
