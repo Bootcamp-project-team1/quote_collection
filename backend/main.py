@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from app.models import user, book, like, producer, publisher, quote_tag, quote, source, tag
-from app.routers import auth, tag, book, publisher, like, quote
+from app.routers import auth, book, like, producer, publisher, quote_tag, quote, source, tag
 from app.database import Base, engine
 
 
@@ -33,6 +33,12 @@ app.include_router(book.router)
 app.include_router(publisher.router)
 app.include_router(like.router)
 app.include_router(quote.router)
+app.include_router(quote_tag.router)
+app.include_router(producer.router)
+app.include_router(source.router)
+
+
+
 
 
 @app.get("/")

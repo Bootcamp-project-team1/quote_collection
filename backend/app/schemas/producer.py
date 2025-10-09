@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 
 class ProducerBase(BaseModel):
     name: str
-    pd_type: str  # 예: "book", "movie", "drama"
+    pd_type: str 
 
 class ProducerCreate(ProducerBase):
     pass

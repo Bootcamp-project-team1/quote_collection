@@ -25,4 +25,4 @@ def delete_quote(quote_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="문장을 찾을 수 없습니다.")
     db.delete(quote)
     db.commit()
-    return {"문장 삭제 됨"}
+    return {"message" : "문장 삭제 됨"}

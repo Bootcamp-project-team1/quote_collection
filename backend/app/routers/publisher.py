@@ -28,4 +28,4 @@ def delete_publisher(name : str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="출판사를 찾을 수 없습니다.")
     db.delete(publisher)
     db.commit()
-    return {"message": "출판사 삭제 됨"}
+    return {"message" : "출판사 삭제 됨"}

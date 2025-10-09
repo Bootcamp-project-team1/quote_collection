@@ -25,4 +25,4 @@ def delete_source(source_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="소스를 찾을 수 없습니다.")
     db.delete(source)
     db.commit()
-    return {"소스 삭제 완료"}
+    return {"message" : "소스 삭제 완료"}

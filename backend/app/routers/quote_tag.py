@@ -28,4 +28,4 @@ def remove_quote_tag(quote_id: int, tag_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="태그를 찾을 수 없습니다.")
     db.delete(quote_tag)
     db.commit()
-    return{"태그 삭제 완료"}
+    return{"message" : "태그 삭제 완료"}

@@ -28,4 +28,4 @@ def delete_producer(producer_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="제작사를 찾을 수 없습니다.")
     db.delete(producer)
     db.commit()
-    return {"message": f"제작사 삭제 완료"}
+    return {"message" : "제작사 삭제 완료"}

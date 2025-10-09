@@ -28,4 +28,4 @@ def delete_tag(tag_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="태그를 찾을 수 없습니다.")
     db.delete(tag)
     db.commit()
-    return {"message": "태그 삭제 됨"}
+    return {"message" : "태그 삭제 됨"}
