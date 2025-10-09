@@ -8,7 +8,7 @@ export const DramaWrite = () =>{
     const[release, setRelease]=useState('');
     const[content, setContent] = useState('');
 
-    const tags = ['로맨스','공포','액션','스릴러','공상/SF','코미디','철학','드라마','다큐멘터리','예능','시리즈','논픽션','애니메이션','뮤지컬','히어로','누아르','사회','국내','해외'];
+    const tags = ['로맨스','공포','액션','스릴러','공상/SF','코미디','철학','드라마','다큐멘터리','예능','시리즈','논픽션','애니메이션','뮤지컬','히어로','TV시리즈','누아르','사회','국내','해외'];
     const [selectedTags,setSelectedTags]=useState([]);
     const [error, setError]=useState('');
     const [charNum,setCharNum]=useState(0);
@@ -42,12 +42,17 @@ export const DramaWrite = () =>{
             return;
         }
 
+        const today = new Date();
+
         const newDrama = {
+            'id':Date.now(),
             'title':title,
-            'producer':producer,
-            'release':release,
+            'creater':producer,
+            'subdata':release,
             'content':content,
-            'tags':selectedTags
+            'tags':selectedTags,
+            'createdAt': today.getFullYear() + (today.getMonth()+1)+ today.getDay() + today.getHours() + today.getMinutes() + today.getMilliseconds(),
+            'writer':'username'
         }
         return newDrama;
     }
@@ -71,7 +76,7 @@ export const DramaWrite = () =>{
             <div className="flex items-end mt-3">
                 <label className="w-1/5 text-end pb-20">기록 하고싶은 대사 <span className="text-red-700">*</span>
                 <div className="text-xs mr-4 text-gray-700">{charNum}/1000</div></label>
-                <textarea maxLength="1000" className="w-4/6 h-32 outline-1 pb-20 pl-4 rounded-lg p-2 shadow-lg ml-3 shadow-gray-400 outline-main-green" placeholder="기록 하고싶은 문장을 입력하세요" value={content} onChange={e=>{setContent(e.target.value); setCharNum(e.target.value.length);}} />
+                <textarea maxLength="1000" className="w-4/6 h-32 outline-1 pb-20 pl-4 rounded-lg p-2 shadow-lg ml-3 shadow-gray-400 outline-main-green" placeholder="기록 하고싶은 대사를 입력하세요" value={content} onChange={e=>{setContent(e.target.value); setCharNum(e.target.value.length);}} />
             </div>
              <div className="flex items-end mt-3">
                 <label className="w-1/5 text-end pb-16 pr-2">태그 </label>

@@ -42,12 +42,17 @@ export const BookWrite = () =>{
             return;
         }
 
+        const today = new Date();
+
         const newBook = {
+            'id':Date.now(),
             'title':title,
-            'author':author,
-            'publisher':publisher,
+            'creater':author,
+            'subdata':publisher,
             'content':content,
-            'tags':selectedTags
+            'tags':selectedTags,
+            'createdAt': today.getFullYear() + (today.getMonth()+1)+ today.getDay() + today.getHours() + today.getMinutes() + today.getMilliseconds(),
+            'writer':'username'
         }
         return newBook;
     }
