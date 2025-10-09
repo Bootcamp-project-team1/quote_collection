@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { BookDetail } from "./layout/BookDetail";
 import { MovieDetail } from "./layout/MovieDetail";
 import { DramaDetail } from "./layout/DramaDetail";
+import { RecommendDetail } from "./layout/RecommendDetail";
 
 export const Detail=()=>{
     const location = useLocation();
@@ -21,7 +22,7 @@ export const Detail=()=>{
             'writer':'hana', 'createdAt':'2013-10-23'
         }
         setQuote(q);
-        setMode('movie');
+        setMode('book');
     },[]);
 
     return(
@@ -29,6 +30,7 @@ export const Detail=()=>{
         {mode=='book'&& <BookDetail quote={quote}/>}
         {mode=='movie'&& <MovieDetail quote={quote}/>}
         {mode=='drama'&& <DramaDetail quote={quote}/>}
+        <RecommendDetail quote={quote}/>
         </>
     );
 }

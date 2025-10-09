@@ -1,13 +1,20 @@
+import { useNavigate } from 'react-router-dom';
 import mark from '../../../assets/bookmark.png';
 import marked from '../../../assets/bookmark_marked.png';
 
 export const DramaDetail =({quote})=>{
+
+ const navigation = useNavigate();
+
+  const onSearchList =(tag)=>{
+    navigation('/searchlist',{state:{key:tag}});
+  }
     return(
         <>
          <div className="flex flex-col mt-10">
                   <div className="text-3xl mb-5">DRAMA MARKY</div>
                     <div className="flex items-end mt-3">
-                        <label className="w-/12 text-end text-sm pb-2">드라마 제목 </label>
+                        <label className="w-/12 text-end text-sm pb-3">드라마 제목 </label>
                         <div className="w-4/6 text-xl text-start rounded-lg p-2 pl-4 ml-3">{quote.title}</div>
                      </div>
                      <div className="flex justify-center mt-3">  
@@ -19,23 +26,23 @@ export const DramaDetail =({quote})=>{
                         </div>
                      </div>
                      <div className="flex items-end mt-3">
-                        <label className="text-sm w-1/12 text-end pb-2">프로듀서</label>
+                        <label className="text-sm w-1/12 text-end pb-3">프로듀서</label>
                         <div className="w-4/6 text-start rounded-lg p-2 pl-4 ml-3 text-sm pb-3">{quote.creater}</div>
                     </div>
         
                     {quote.subData && (<>
                     <div className="flex items-end mt-3">
-                        <label className="text-sm w-1/12 text-end pb-2">개봉일 </label>
+                        <label className="text-sm w-1/12 text-end pb-3">개봉일 </label>
                         <div className="w-4/6 text-start rounded-lg p-2 pl-4 ml-3 text-sm pb-3">{quote.subData}</div>
                         </div></>)} 
         
                     {quote.tags && (
                     <div className="flex items-end mt-3">
-                         <label className="text-sm w-1/12 text-end pb-2">TAGS </label>
+                         <label className="text-sm w-1/12 text-end pb-3">TAGS </label>
                         <div className="w-4/6 text-start rounded-lg p-2 pl-4">
                         {quote.tags.map(
-                            (q)=>(
-                                <span key={q.id} className="rounded-xl p-2 bg-main-beige text-xs ml-1 mr-1 mb-1 border-sub-darkbeidge border">{q}</span>
+                            (t)=>(
+                                <span key={t.id} onClick={()=>onSearchList(t)} className="cursor-pointer rounded-xl p-2 bg-main-beige text-xs ml-1 mr-1 mb-1 border-sub-darkbeidge border">{t}</span>
                             )
                         )}</div>
                     </div>

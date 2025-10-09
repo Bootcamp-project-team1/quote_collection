@@ -15,6 +15,7 @@ import { Signup } from "./pages/Signup";
 import { MyNavBar } from "./components/MyNavBar";
 import { Logo } from './components/Logo/index';
 import { Detail } from "./pages/Detail";
+import { SearchList } from "./pages/SearchList";
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
           { path: "/mypage", element: <Mypage /> },
           { path: "/signup", element: <Signup /> },
           { path: "/detail", element: <Detail /> },
+          { path: "/searchlist", element: <SearchList /> },
         ],
       },
     ],
