@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import { MainPage } from "./pages/MainPage";
-import { Bookmark } from "./pages/Bookmark";
 import { Write } from "./pages/Write";
 import { Mypage } from "./pages/Mypage";
 import LoginModal from "./components/Modal/LoginModal";
@@ -37,7 +36,6 @@ const RootLayout = () => {
                 <LoginModal setIsOpen={setIsOpen} setIsLogin={setIsLogin} />
               </div>
             )}
-
             <MyNavBar
               setIsLogin={setIsLogin}
               isLogIn={isLogIn}
@@ -65,9 +63,8 @@ const router = createBrowserRouter([
         children: [
           { path: "/movie", element: <MainPage mode={"movie"} /> },
           { path: "/drama", element: <MainPage mode={"drama"} /> },
-          { path: "/bookmark", element: <Bookmark /> },
           { path: "/write", element: <Write /> },
-          { path: "/mypage", element: <Mypage /> },
+          { path: "/mypage/:tab", element: <Mypage /> },
           { path: "/signup", element: <Signup /> },
           { path: "/detail", element: <Detail /> },
           { path: "/searchlist", element: <SearchList /> },

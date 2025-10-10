@@ -1,6 +1,7 @@
-export const Bookmark =()=>{
+export const Upload =()=>{
     return(
         <>
+        upload
         </>
     );
 }
