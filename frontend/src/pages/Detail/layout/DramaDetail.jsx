@@ -1,14 +1,35 @@
 import { useNavigate } from 'react-router-dom';
 import mark from '../../../assets/bookmark.png';
 import marked from '../../../assets/bookmark_marked.png';
+import { useEffect, useState } from 'react';
 
 export const DramaDetail =({quote})=>{
 
  const navigation = useNavigate();
+ const [isLogin, setIsLogin] = useState(false);
+ const [bookmark, setBookMarked] = useState(false);
 
-  const onSearchList =(tag)=>{
-    navigation('/searchlist',{state:{key:tag}});
+ useEffect(()=>{
+    if(isLogin){
+        /**로그인한 사용자가 이 글에 북마크를 했는지 데이터 불러오기 */
+        setBookMarked(true);
+    }
+    
+ },[isLogin]);
+
+ const onIsLogin =()=>{
+    if(!isLogin){
+        alert('로그인이 필요한 기능입니다.');
+        return;
+    }
+    /** DB 사용자 북마트 데이터 업데이트 필요 */
+    setBookMarked(!bookmark);
+ }
+
+  const onSearchList =(input)=>{
+    navigation('/searchlist',{state:{key:input}});
   }
+
     return(
         <>
          <div className="flex flex-col mt-10">
@@ -22,7 +43,7 @@ export const DramaDetail =({quote})=>{
                      </div>
                     <div className="flex justify-end mt-3">  
                         <div className=" flex border-2 border-sub-darkgreen w-1/12 items-end rounded-lg p-3 mr-14">
-                            <img className="size-5 cursor-pointer" src={mark}/>
+                            <img className="size-5 cursor-pointer" onClick={onIsLogin} src={(isLogin&&bookmark)?marked:mark}/>
                         </div>
                      </div>
                      <div className="flex items-end mt-3">
