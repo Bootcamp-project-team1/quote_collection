@@ -4,7 +4,7 @@ import { Upload } from "./layout/Upload";
 import { MemberInfo } from "./layout/MemberInfo";
 
 export const Mypage=()=>{
-    const { tab } = useParams(); // <-- URL에서 탭 이름 읽기
+    const { tab } = useParams(); 
     const navigate = useNavigate();
 
     const style = ["mt-10 text-sm pt-3 pb-3 ml-1" ,"mt-10 text-sm bg-main-white pt-3 pb-3 mr-5 rounded-lg"];

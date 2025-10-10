@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 export const MovieDetail =({quote})=>{
 
  const navigation = useNavigate();
- const [isLogin, setIsLogin] = useState(false);
- const [bookmark, setBookMarked] = useState(false);
+ const [isLogin, setIsLogin] = useState(true);
+ const [bookmark, setBookMarked] = useState(true);
 
  useEffect(()=>{
     if(isLogin){
@@ -27,7 +27,7 @@ export const MovieDetail =({quote})=>{
  }
 
   const onSearchList =(input)=>{
-    navigation('/searchlist',{state:{key:input}});
+    navigation('/searchlist/'+input);
   }
 
     return(

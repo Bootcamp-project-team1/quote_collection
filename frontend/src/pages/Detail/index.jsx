@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { BookDetail } from "./layout/BookDetail";
 import { MovieDetail } from "./layout/MovieDetail";
 import { DramaDetail } from "./layout/DramaDetail";
 import { RecommendDetail } from "./layout/RecommendDetail";
 
 export const Detail=()=>{
-    const location = useLocation();
     /** id로 해당 data 불러오기  */
-    const id = location.state?.key;
+    const {id} = useParams();
+    
     const [mode, setMode]=useState('');
-
     const [quote,setQuote]=useState('');
 
     /** dummy data */

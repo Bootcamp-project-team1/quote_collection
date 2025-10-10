@@ -5,7 +5,7 @@ export const New =({newQuote})=>{
     const navigation = useNavigate();
     
     const onDetail=(id)=>{
-        navigation('/detail',{state:{key:id}})
+        navigation('/detail/'+id);
     }
     
     return(

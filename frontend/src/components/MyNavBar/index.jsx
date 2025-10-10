@@ -1,5 +1,4 @@
 import { NavLink, useNavigate } from "react-router-dom";
-
 export const MyNavBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
   const navigation = useNavigate();
 
@@ -10,19 +9,19 @@ export const MyNavBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
   };
 
   const onBookmark = () => {
-    // if (!isLogIn) {
-    //   alert("로그인이 필요한 기능입니다.");
-    // } else {
+    if (!isLogIn) {
+      alert("로그인이 필요한 기능입니다.");
+    } else {
       navigation("/mypage/bookmark");
-    // }
+    }
   };
 
   const onWrite = () => {
-    // if (!isLogIn) {
-    //   alert("로그인이 필요한 기능입니다.");
-    // } else {
+    if (!isLogIn) {
+      alert("로그인이 필요한 기능입니다.");
+    } else {
       navigation("/write");
-    // }
+    }
   };
 
   return (
@@ -36,7 +35,7 @@ export const MyNavBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
         </div>
         {isLogIn ? (
           <>
-            <NavLink className="mr-3 pr-2 pl-2 cursor-pointer" to="/mypage">
+            <NavLink className="mr-3 pr-2 pl-2 cursor-pointer" to="/mypage/memberinfo">
               mypage
             </NavLink>
             <span className="mr-3 pr-2 pl-2 cursor-pointer" onClick={handleLogout}>

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 export const Search = ({prevInput}) => {
@@ -16,7 +15,7 @@ export const Search = ({prevInput}) => {
       alert('검색어를 입력해주세요');
       return;
     }
-    navigation('/searchlist',{state:{key:input}});
+    navigation('/searchlist/'+input);
   }
 
   return (

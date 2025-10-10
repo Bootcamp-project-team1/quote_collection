@@ -27,7 +27,7 @@ export const DramaDetail =({quote})=>{
  }
 
   const onSearchList =(input)=>{
-    navigation('/searchlist',{state:{key:input}});
+    navigation('/searchlist/'+input);
   }
 
     return(
