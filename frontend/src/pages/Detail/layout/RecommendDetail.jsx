@@ -5,11 +5,11 @@ export const RecommendDetail =()=>{
     const navigation = useNavigate();
     
     const onDetail=(id)=>{
-        navigation('/detail',{state:{key:id}})
+        navigation('/detail/'+id)
     }
 
     /**dummy data */
-    const q = [{'content':'1'},{'content':'2'},{'content':'3'}];
+    const q = [{'id':19,'content':'1'},{'id':12,'content':'2'},{'id':223,'content':'3'}];
     
     return(
         <>
