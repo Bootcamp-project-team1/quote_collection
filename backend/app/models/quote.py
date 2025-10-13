@@ -12,7 +12,6 @@ class Quote(Base):
     book_id = Column(Integer, nullable=True)
     content = Column(TEXT, nullable=False)
     page = Column(String(255), nullable=False)
-    likes_count = Column(Integer, nullable=False, server_default = "0")
     created_at = Column(DateTime, server_default=func.now())
 
     tags = relationship("Tag", secondary="quote_tags", back_populates="quotes")

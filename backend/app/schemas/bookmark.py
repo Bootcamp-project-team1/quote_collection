@@ -1,18 +1,18 @@
 from pydantic import BaseModel, Field
 from datetime import datetime, timezone
 
-class LikeBase(BaseModel):
+class BookmarkBase(BaseModel):
     user_id: int
     quote_id: int
 
-class LikeCreate(LikeBase):
+class BookmakrCreate(BookmarkBase):
     pass
 
-class LikeInDB(LikeBase):
+class BookmarkInDB(BookmarkBase):
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
     class Config:
         from_attributes = True
 
-class LikeRead(LikeInDB):
+class BookmarkRead(BookmarkInDB):
     pass
