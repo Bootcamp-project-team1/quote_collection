@@ -13,7 +13,7 @@ class ProducerUpdate(BaseModel):
     pd_type: str | None = None
 
 class ProducerInDB(ProducerBase):
-    producer_id: int
+    id: int
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
     class Config:

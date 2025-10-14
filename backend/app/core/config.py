@@ -3,7 +3,7 @@ from pydantic import Field
 
 
 class Settings(BaseSettings):
-
+    TESTING: bool = Field(False, alias="TESTING")
     # 비동기 DB URL
     database_url: str = Field(..., alias="DATABASE_URL")
 
@@ -20,8 +20,11 @@ class Settings(BaseSettings):
         case_sensitive = True
         extra = "allow"
         populate_by_name = True
-        # env_file = ".env"
-        env_file = ".env.dev"  # 개발 도중에는 이걸 사용 (배포할떄 바꾸기)
+        env_file = ".env.dev"
+
+class TestSettings(Settings):
+    class Config:
+        env_file = ".env.test"
 
 
-settings = Settings()
+settings = TestSettings() if Settings().TESTING else Settings()

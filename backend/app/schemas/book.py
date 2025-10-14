@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from typing import Optional
 
 class BookBase(BaseModel):
-    title: str
+    title: str = Field(min_length=1)
     author: str
     publisher: Optional[str] = None
 
@@ -11,7 +11,7 @@ class BookCreate(BookBase):
     pass
 
 class BookUpdate(BaseModel):
-    title: Optional[str] = None
+    title: Optional[str] = Field(None, min_length=1)
     author: Optional[str] = None
     publisher: Optional[str] = None
 

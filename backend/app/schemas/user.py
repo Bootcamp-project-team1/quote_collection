@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
 from typing import Optional
 
@@ -6,8 +6,8 @@ from typing import Optional
 # 회원가입 요청
 class UserCreate(BaseModel):
     email: EmailStr
-    username: str
-    password: str
+    username: str = Field(min_length=3)
+    password: str = Field(min_length=6)
 
 
 # 로그인 요청
@@ -19,8 +19,8 @@ class UserLogin(BaseModel):
 # 사용자 정보 수정
 class UserUpdate(BaseModel):
     email: Optional[EmailStr] = None
-    username: Optional[str] = None
-    password: Optional[str] = None
+    username: Optional[str] = Field(None, min_length=3)
+    password: Optional[str] = Field(None, min_length=6)
     is_active: Optional[bool] = None
 
 
