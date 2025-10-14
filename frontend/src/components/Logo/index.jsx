@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export const Logo=()=>{
+
+    const navigator = useNavigate();
 
     return(
         <>
