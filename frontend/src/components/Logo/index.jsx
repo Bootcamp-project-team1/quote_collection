@@ -2,7 +2,9 @@ export const Logo=()=>{
 
     return(
         <>
-        <div className="flex justify-center mt-4 text-5xl border-b-2 " >WEB NAME</div>
+        <hr className="border-1"></hr>
+        <div className="flex justify-center mt-4 mb-4 text-5xl">WEB NAME</div>
+        <hr className="border-1"></hr>
         </>
     );
 }
