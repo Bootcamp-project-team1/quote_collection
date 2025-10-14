@@ -3,12 +3,12 @@ from pydantic import Field
 
 
 class Settings(BaseSettings):
-    
+
     # 비동기 DB URL
-    database_url: str = "mysql+aiomysql://root:12345@127.0.0.1:3306/quote_collection?charset=utf8mb4"
+    database_url: str = Field(..., alias="DATABASE_URL")
 
     # 동기 DB URL
-    sync_database_url: str = "mysql+pymysql://root:12345@127.0.0.1:3306/quote_collection?charset=utf8mb4"
+    sync_database_url: str = Field(..., alias="SYNC_DATABASE_URL")
 
     secret_key: str = Field(..., alias="SECRET_KEY")
     jwt_algo: str = Field("HS256", alias="ALGORITHM")
