@@ -9,5 +9,4 @@ class Book(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), nullable=False)
     author = Column(String(255), nullable=False)
-    isbn = Column(String(255), nullable=True)
     created_at = Column(DateTime, server_default=func.now())

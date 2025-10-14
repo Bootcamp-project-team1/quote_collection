@@ -1,9 +1,9 @@
 from pydantic import BaseModel, Field
 from datetime import datetime, timezone
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Literal
 
 class SourceBase(BaseModel):
-    source_type: str
+    source_type: Literal['book', 'movie', 'drama', 'other']
     pd_id: int
     data: Dict[str, Any]
 
