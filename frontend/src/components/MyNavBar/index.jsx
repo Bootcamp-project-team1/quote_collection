@@ -9,19 +9,19 @@ export const MyNavBar = ({ setIsOpen, isLogIn, setIsLogin }) => {
   };
 
   const onBookmark = () => {
-    if (!isLogIn) {
-      alert("로그인이 필요한 기능입니다.");
-    } else {
+    // if (!isLogIn) {
+    //   alert("로그인이 필요한 기능입니다.");
+    // } else {
       navigation("/mypage/bookmark");
-    }
+    // }
   };
 
   const onWrite = () => {
-    if (!isLogIn) {
-      alert("로그인이 필요한 기능입니다.");
-    } else {
+    // if (!isLogIn) {
+    //   alert("로그인이 필요한 기능입니다.");
+    // } else {
       navigation("/write");
-    }
+    // }
   };
 
   return (
