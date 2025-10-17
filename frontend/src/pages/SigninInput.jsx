@@ -5,7 +5,7 @@ const SigninInput = ({ title, ...inputProps }, ref) => {
     <>
      
         <div className="mb-3 flex flex-col sm:flex-row sm:items-center sm:justify-end">
-          <div className="mb-3">{title}</div>
+          <div className="mb-3 whitespace-nowrap">{title}</div>
           <div>
             <input
               {...inputProps}

@@ -59,9 +59,9 @@ export const Signup = () => {
   };
   return (
     <>
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-start pt-12">
       <div className="w-full max-w-md rounded-xl p-8">
-        <h1 className="mb-10 text-custom-basic-font text-3xl">Signup</h1>
+        <div className="mb-10 text-custom-basic-font text-3xl">Signup</div>
 
         <form
           className="flex-col items-center justify-center"
@@ -124,7 +124,7 @@ export const Signup = () => {
               </button>
               <button
                 type="submit"
-                className="bg-custom-pink w-[80px] h-[30px]"
+                className="bg-custom-pink w-[80px] h-[30px] mt-5"
               >
                 Confirm
               </button>
