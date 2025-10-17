@@ -7,7 +7,7 @@ export const Logo=()=>{
     return(
         <>
         <hr className="border-1"></hr>
-        <div className="flex justify-center mt-4 mb-4 text-5xl cursor-pointer" onClick={()=>navigator('/')}>WEB NAME</div>
+        <div className="flex justify-center mt-5 mb-5 text-5xl cursor-pointer" onClick={()=>navigator('/')}>Momentary</div>
         <hr className="border-1"></hr>
         </>
     );

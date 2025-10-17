@@ -12,9 +12,10 @@ import LoginModal from "./components/Modal/LoginModal";
 import { useEffect, useState } from "react";
 import { Signup } from "./pages/Signup";
 import { MyNavBar } from "./components/MyNavBar";
-import { Logo } from './components/Logo/index';
+import { Logo } from "./components/Logo/index";
 import { Detail } from "./pages/Detail";
 import { SearchList } from "./pages/SearchList";
+import { BookMark } from "./pages/Mypage/layout/BookMark";
 
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,7 @@ const RootLayout = () => {
               setIsOpen={setIsOpen}
             />
             <main className="p-8 md:p-12 text-center text-black">
-              <Logo/>
+              <Logo />
               <Outlet />
             </main>
           </div>
@@ -68,6 +69,7 @@ const router = createBrowserRouter([
           { path: "/signup", element: <Signup /> },
           { path: "/detail/:id", element: <Detail /> },
           { path: "/searchlist/:input", element: <SearchList /> },
+          { path: "/bookmark", element: <BookMark /> },
         ],
       },
     ],
