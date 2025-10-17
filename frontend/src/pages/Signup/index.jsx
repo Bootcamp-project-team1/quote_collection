@@ -18,8 +18,9 @@ export const Signup = () => {
     setForm({ ...form, [name]: value });
   };
 
-  //테스트용 이름들
+  //테스트용 이름들, 연결시 삭제해주세요
   const existingNames = ["연서", "가현", "예원"];
+  //테스트용 이름들, 연결시 삭제해주세요
 
   const validate = () => {
     const newErrors = {};
@@ -28,7 +29,11 @@ export const Signup = () => {
       newErrors.name = "이미 사용중인 이름입니다.";
     }
 
-    if (/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i.test(form.email)) {
+    if (
+      !/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i.test(
+        form.email
+      )
+    ) {
       newErrors.email = "올바른 이메일 형식이 아닙니다.";
     }
 
@@ -48,14 +53,15 @@ export const Signup = () => {
     e.preventDefault();
     if (validate()) {
       alert("회원가입이 완료되었습니다");
-      console.log("버튼누름")
+      console.log("버튼누름");
       navigation("/");
     }
   };
   return (
     <>
-      <div className="mt-10  flex-col items-center justify-center">
-        <div className="mb-10 text-custom-basic-font text-3xl">Signup</div>
+    <div className="min-h-screen flex justify-center items-center">
+      <div className="w-full max-w-md rounded-xl p-8">
+        <h1 className="mb-10 text-custom-basic-font text-3xl">Signup</h1>
 
         <form
           className="flex-col items-center justify-center"
@@ -125,6 +131,7 @@ export const Signup = () => {
             </div>
           </div>
         </form>
+        </div>
       </div>
     </>
   );

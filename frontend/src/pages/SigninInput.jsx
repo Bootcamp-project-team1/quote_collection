@@ -1,14 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const SigninInput = ({title, type, placeholder}) => {
-    return (
+const SigninInput = ({ title, ...inputProps }, ref) => {
+  return (
     <>
-      <div className=" flex justify-end-safe items-center">
-        <div className='mr-3 mb-3'>{title}</div>
-        <div>
-          <input type={type} placeholder={placeholder} className="w-[300px] bg-white rounded-md shadow-md focus:shadow-lg focus:outline-none p-1 m-2"/>
+     
+        <div className="mb-3 flex flex-col sm:flex-row sm:items-center sm:justify-end">
+          <div className="mb-3">{title}</div>
+          <div>
+            <input
+              {...inputProps}
+              ref={ref}
+              className="ml-3 w-full sm:w-[300px] bg-white rounded-md shadow-md focus:shadow-lg focus:outline-none p-2"
+            />
+          </div>
         </div>
-      </div>
+
     </>
   );
 };
