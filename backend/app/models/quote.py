@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, TEXT, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, TEXT, ForeignKey ### 외래키 추가 ###
 from sqlalchemy import func
 from app.database import Base  
 from sqlalchemy.orm import relationship
@@ -15,3 +15,7 @@ class Quote(Base):
     created_at = Column(DateTime, server_default=func.now())
 
     tags = relationship("Tag", secondary="quote_tags", back_populates="quotes")
+
+    ### Movie와의 관계 설정###
+    movie_id = Column(Integer, ForeignKey("movies.id"))
+    movie = relationship("Movie", back_populates="quotes")
