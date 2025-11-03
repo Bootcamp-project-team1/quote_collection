@@ -3,18 +3,16 @@ import { LoginInput } from "../../LoginInput";
 import { useAuth } from "../../../hooks/useAuth";
 
 const LoginModal = ({ setIsOpen }) => {
-  const { login, error, setError } = useAuth();
-
+  const { login, error} = useAuth();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    if (!email) {
-      setError(true);
+    if(!email.trim())
       return;
-    }
 
     const success = await login(email, password);
     if (success) {
@@ -39,7 +37,6 @@ const LoginModal = ({ setIsOpen }) => {
                 title="email"
                 type="email"
                 name="email"
-                error={error}
               />
               <div className="flex items-center mb-5">
                 <LoginInput
